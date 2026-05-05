@@ -185,9 +185,7 @@ bool IntArray::add(int value) {
         count++;
         return true;
     }
-    else {
-        return false;
-    }
+    return false;
 }
 
 // Get element at index
@@ -197,9 +195,7 @@ int IntArray::get(int index) const {
     if (0 <= index && index < count) {
         return data[index];
     } 
-    else {
-        return -1;
-    }
+    return -1;
 }
 
 // Size
@@ -217,19 +213,18 @@ int IntArray::getCapacity() const {
 // isEmpty
 bool IntArray::isEmpty() const {
     // TODO 14: Return true if count == 0
-    return (count == 0);
+    return count == 0;
 }
 
 // Remove last element
 bool IntArray::removeLast() {
     // TODO 15: If not empty, decrement count and return true.
     //          Otherwise return false.
-    if (!isEmpty()) {
-        count -= 1;
+    if (count > 0) {
+        count--;
         return true;
-    } else {
-        return false;
     }
+    return false;
 }
 
 // ================================================================
